@@ -14,7 +14,7 @@ const weather = (function () {
       return { cityName, feelsLike, humidity, temp, wind };
     }
 
-    const endpoint = `http://api.weatherapi.com/v1/current.json?key=eccfab4785d64516adc134456232703&q=${city}`;
+    const endpoint = `https://api.weatherapi.com/v1/current.json?key=eccfab4785d64516adc134456232703&q=${city}`;
 
     try {
       const response = await fetch(endpoint, { mode: "cors" });
