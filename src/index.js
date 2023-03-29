@@ -1,4 +1,5 @@
 import weather from "./modules/weather";
+import UI from "./modules/UI";
 
 const searchForm = document.getElementById("searchForm");
 const searchInput = document.getElementById("searchInput");
@@ -8,7 +9,8 @@ searchForm.addEventListener("submit", function (e) {
   e.preventDefault();
 });
 
-searchBtn.addEventListener("click", function () {
+searchBtn.addEventListener("click", async function () {
   if (searchInput.value === "") return;
-  weather.getWeather(searchInput.value);
+  const weatherData = await weather.getWeather(searchInput.value);
+  UI.displaySearchResult(weatherData);
 });
